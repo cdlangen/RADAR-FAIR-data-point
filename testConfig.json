@@ -1,0 +1,98 @@
+{
+    "api_host": "http://radar-restapi.eu-west-1.elasticbeanstalk.com/api",
+    "api_password": "changeme",
+    "api_user": "admin",
+    "catalogs": {
+        "RADAR-CNS": {
+            "issued": "21/07/2017",
+            "language": [
+                "en"
+            ],
+            "modified": "21/07/2017",
+            "publisher": "RADAR-CNS",
+            "title": "Studies of the RADAR-CNS consortium",
+            "title_language": "en",
+            "uri": "/RADAR-CNS",
+            "version": 1,
+            "identifier": "RADAR-CNS",
+            "label": "RADAR-CNS",
+            "datasets": {
+                "Epilepsy": {
+                    "issued": "21/07/2017",
+                    "modified": "21/07/2017",
+                    "publisher": "RADAR-CNS",
+                    "title": "RADAR-CNS Epilepsy",
+                    "title_language": "en",
+                    "uri": "/Dataset-X",
+                    "version": 1,
+                    "identifier": "RADAR-CNS",
+                    "label": "RADAR-CNS",
+                    "distribution": ["csv", "api"],
+                    "theme": ["wearables", "epilepsy"]
+                }
+            },
+            "dataset": {
+                "issued": "21/07/2017",
+                "modified": "21/07/2017",
+                "publisher": "RADAR-CNS",
+                "title": "RADAR-CNS dataset",
+                "title_language": "en",
+                "uri": "/RADAR-CNS",
+                "version": 1,
+                "identifier": "RADAR-CNS",
+                "label": "RADAR-CNS",
+                "distribution": ["csv", "api"],
+                "theme": ["wearables", "epilepsy"]
+            },
+            "themeTaxonomy": "TODO"
+        },
+
+        "Organization-X": {
+            "issued": "21/07/2017",
+            "language": [
+                "en"
+            ],
+            "modified": "21/07/2017",
+            "publisher": "Project-X",
+            "title": "Studies of the Project-X consortium",
+            "title_language": "en",
+            "uri": "/Organization-X",
+            "version": 1,
+            "identifier": "Organization-X",
+            "label": "Organization-X",
+            "datasets": {
+                "Dataset-X": {
+                    "issued": "21/07/2017",
+                    "modified": "21/07/2017",
+                    "publisher": "Organization-X",
+                    "title": "Organization-X's Dataset-X",
+                    "title_language": "en",
+                    "uri": "/Dataset-X",
+                    "version": 1,
+                    "identifier": "Organization-X",
+                    "label": "Organization-X",
+                    "distribution": ["csv", "api"],
+                    "theme": ["wearables", "disease X"]
+                }
+            },
+            "themeTaxonomy": "TODO"
+        }
+    },
+    "description": "This is the development instance of RADAR FAIR Datapoint.",
+    "description_language": "en",
+    "fdp_uid": "FDPIDENTIFIER_literal",
+    "fdp_uri": "http://some.uri",
+    "issued": "21/07/2017",
+    "languages": [
+        "en",
+        "nl"
+    ],
+    "license_uri": "https://www.gnu.org/licenses/gpl-3.0.en.html",
+    "metadata_version": 1,
+    "modified": "21/07/2017",
+    "organizationName": "The Hyve",
+    "organization_uri": "http://thehyve.nl",
+    "repository_uid": "repository-id",
+    "title": "Hyve FAIR datapoint",
+    "version": 1
+}
