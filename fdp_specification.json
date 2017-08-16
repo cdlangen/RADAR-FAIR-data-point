@@ -1,0 +1,322 @@
+{
+  "name": "FAIR Data Point Software Specification",
+  "description_url": "https://dtl-fair.atlassian.net/wiki/display/FDP/FAIR+Data+Point+Software+Specification",
+  "namespaces": {
+      "datacite": "http://purl.org/spar/datacite/",
+      "dcat": "http://www.w3.org/ns/dcat#",
+      "dct": "http://purl.org/dc/terms/",
+      "fdp": "http://rdf.biosemantics.org/ontologies/fdp-o#",
+      "r3d": "http://www.re3data.org/schema/3-0#"
+  },
+  "fdp" : {
+    "identifier": {
+      "uri": "http://purl.org/dc/terms/identifier",
+      "definition": "An unambiguous and persistent reference to the FDP.",
+      "comment": "Recommended best practice is to identify the resource by means of a string conforming to a formal identification system.",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "version": "http://dublincore.org/usage/terms/history/#identifierT-001",
+      "required": true,
+      "source": "DTL",
+      "variable_name": "repository_uid",
+      "is_uri": false
+    },
+    "license": {
+      "uri": "http://purl.org/dc/terms/license",
+      "definition": "A document describing the conditions for access and usage of the FDP.",
+      "has_range": "http://purl.org/dc/terms/LicenseDocument",
+      "version": "http://dublincore.org/usage/terms/history/#license-002",
+      "required": false,
+      "source": "DTL",
+      "variable_name": "license_uri",
+      "is_uri": true
+    },
+    "title": {
+      "uri": "http://purl.org/dc/terms/title",
+      "definition": "The name of the FDP.",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "version": "http://dublincore.org/usage/terms/history/#titleT-002",
+      "required": true,
+      "source": "DTL"
+    },
+    "description": {
+      "uri": "http://purl.org/dc/terms/description",
+      "definition": "A human-readable description of the FDP.",
+      "version": "http://dublincore.org/usage/terms/history/#descriptionT-001",
+      "required": false,
+      "source": "DTL"
+    },
+    "has_version": {
+      "uri": "http://purl.org/dc/terms/hasVersion",
+      "definition": "The version of the FDP software.",
+      "version": "http://dublincore.org/usage/terms/history/#hasVersion-003",
+      "required": true,
+      "source": "DTL",
+      "variable_name": "version"
+    },
+    "metadata_version": {
+      "uri": "http://purl.org/dc/terms/hasVersion",
+      "version": "http://dublincore.org/usage/terms/history/#hasVersion-003",
+      "required": true,
+      "source": "DTL"
+    },
+    "issued": {
+      "uri": "http://purl.org/dc/terms/issued",
+      "definition": "Date of formal issuance (e.g., deployment) of the FDP.",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "version": "http://dublincore.org/usage/terms/history/#issued-003",
+      "required": true,
+      "source": "DTL"
+    },
+    "modified": {
+      "uri": "http://purl.org/dc/terms/modified",
+      "definition": "Date on which the resource was changed",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "required": true,
+      "source": "DTL"
+    }
+  },
+  "catalog" : {
+    "identifier": {
+      "uri": "http://purl.org/dc/terms/identifier",
+      "definition": "A unique identifier of the catalog.",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "version": "http://dublincore.org/usage/terms/history/#identifierT-001",
+      "required": true,
+      "source": "DTL",
+      "is_uri": false
+    },
+    "title": {
+      "uri": "http://purl.org/dc/terms/title",
+      "definition": "The name of the catalog",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "version": "http://dublincore.org/usage/terms/history/#titleT-002",
+      "required": true,
+      "source": "DTL"
+    },
+    "issued": {
+      "uri": "http://purl.org/dc/terms/issued",
+      "definition": "Date of formal issuance catalog",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "version": "http://dublincore.org/usage/terms/history/#issued-003",
+      "required": true,
+      "source": "DTL"
+    },
+    "modified": {
+      "uri": "http://purl.org/dc/terms/modified",
+      "definition": "Date on which the resource was changed",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "required": true,
+      "source": "DTL"
+    },
+    "has_version": {
+      "uri": "http://purl.org/dc/terms/hasVersion",
+      "definition": "The version of the catalog",
+      "version": "http://dublincore.org/usage/terms/history/#hasVersion-003",
+      "required": true,
+      "source": "DTL",
+      "variable_name": "version"
+    },
+    "description": {
+      "uri": "http://purl.org/dc/terms/description",
+      "definition": "A human-readable description of the catalog",
+      "version": "http://dublincore.org/usage/terms/history/#descriptionT-001",
+      "required": false,
+      "source": "DTL"
+    },
+    "publisher": {
+      "uri": "http://purl.org/dc/terms/description",
+      "definition": "The entity responsible for making the catalog online.",
+      "comment": "Resources of type foaf:Agent are recommended as values for this property.",
+      "has_range": "http://xmlns.com/foaf/spec/#term_Agent",
+      "required": false,
+      "source": "DTL"
+    },
+    "language": {
+      "uri": "http://purl.org/dc/terms/language",
+      "definition": "The language of the catalog. This refers to the language used in the textual metadata describing titles, descriptions, etc. of the datasets in the catalog.",
+      "comment": "Resources defined by the Library of Congress (1, 2) should be used. \nIf a ISO 639-1 (two-letter) code is defined for language, then its corresponding IRI should be used; if no ISO 639-1 code is defined, then IRI corresponding to the ISO 639-2 (three-letter) code should be used.\n\nMultiple values can be used. The publisher might also choose to describe the language on the dataset level (see dataset language).",
+      "has_range": "http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#LinguisticSystem",
+      "required": false,
+      "source": "DTL"
+    },
+    "license": {
+      "uri": "http://purl.org/dc/terms/license",
+      "definition": "This links to the license document under which the catalog is made available and not the datasets. Even if the license of the catalog applies to all of its datasets and distributions, it should be replicated on each distribution.",
+      "has_range": "http://purl.org/dc/terms/LicenseDocument",
+      "version": "http://dublincore.org/usage/terms/history/#license-002",
+      "required": false,
+      "source": "DTL",
+      "variable_name": "license_uri",
+      "is_uri": true
+    },
+    "rights": {
+      "uri": "http://purl.org/dc/terms/rights",
+      "definition": "This describes the rights under which the catalog can be used/reused and not the datasets. Even if theses rights apply to all the catalog datasets and distributions, it should be replicated on each distribution.",
+      "has_range": "http://purl.org/dc/terms/RightsStatement",
+      "required": false,
+      "source": "DTL",
+      "variable_name": "rights_uri",
+      "is_uri": true
+    },
+    "label": {
+      "uri": "https://www.w3.org/TR/rdf-schema/#ch_label",
+      "definition": "an instance of rdf:Property that may be used to provide a human-readable version of a resource's name.",
+      "comment": "A triple of the form (R, rdfs:label, L) states that L is a human readable label for R.",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "required": true,
+      "source": "DTL"
+    },
+    "homepage": {
+      "uri": "http://xmlns.com/foaf/spec/#term_homepage",
+      "definition": "The homepage property relates something to a homepage about it.",
+      "comment": "Many kinds of things have homepages. FOAF allows a thing to have multiple homepages, but constrains homepage so that there can be only one thing that has any particular homepage.\nA 'homepage' in this sense is a public Web document, typically but not necessarily available in HTML format. The page has as a topic the thing whose homepage it is. The homepage is usually controlled, edited or published by the thing whose homepage it is; as such one might look to a homepage for information on its owner from its owner. This works for people, companies, organisations etc.\nThe homepage property is a sub-property of the more general page property for relating a thing to a page about that thing. See also topic, the inverse of the page property.",
+      "has_range": "http://xmlns.com/foaf/spec/#term_Document",
+      "required": false,
+      "source": "DTL",
+      "is_uri": true
+    },
+    "dataset": {
+      "uri": "https://www.w3.org/ns/dcat#Dataset",
+      "definition": "A collection of data, published or curated by a single agent, and available for access or download in one or more formats.",
+      "comment": "This class represents the actual dataset as published by the dataset publisher. In cases where a distinction between the actual dataset and its entry in the catalog is necessary (because metadata such as modification date and maintainer might differ), the catalog record class can be used for the latter.",
+      "required": true,
+      "source": "DTL"
+    },
+    "themeTaxonomy": {
+      "uri": "https://www.w3.org/ns/dcat#themeTaxonomy",
+      "definition": "The knowledge organization system (KOS) used to classify catalog's datasets.",
+      "has_range" : "https://www.w3.org/2009/08/skos-reference/skos.html#ConceptScheme",
+      "required": true,
+      "source": "DTL"
+    }
+  },
+  "dataset" : {
+    "identifier": {
+      "uri": "http://purl.org/dc/terms/identifier",
+      "definition": "A unique identifier of the catalog.",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "version": "http://dublincore.org/usage/terms/history/#identifierT-001",
+      "required": true,
+      "source": "DTL",
+      "is_uri": false
+    },
+    "title": {
+      "uri": "http://purl.org/dc/terms/title",
+      "definition": "The name of the catalog",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "version": "http://dublincore.org/usage/terms/history/#titleT-002",
+      "required": true,
+      "source": "DTL"
+    },
+    "issued": {
+      "uri": "http://purl.org/dc/terms/issued",
+      "definition": "Date of formal issuance catalog",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "version": "http://dublincore.org/usage/terms/history/#issued-003",
+      "required": true,
+      "source": "DTL"
+    },
+    "modified": {
+      "uri": "http://purl.org/dc/terms/modified",
+      "definition": "Date on which the resource was changed",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "required": true,
+      "source": "DTL"
+    },
+    "has_version": {
+      "uri": "http://purl.org/dc/terms/hasVersion",
+      "definition": "The version of the catalog",
+      "version": "http://dublincore.org/usage/terms/history/#hasVersion-003",
+      "required": true,
+      "source": "DTL",
+      "variable_name": "version"
+    },
+    "description": {
+      "uri": "http://purl.org/dc/terms/description",
+      "definition": "A human-readable description of the catalog",
+      "version": "http://dublincore.org/usage/terms/history/#descriptionT-001",
+      "required": false,
+      "source": "DTL"
+    },
+    "publisher": {
+      "uri": "http://purl.org/dc/terms/description",
+      "definition": "The entity responsible for making the catalog online.",
+      "comment": "Resources of type foaf:Agent are recommended as values for this property.",
+      "has_range": "http://xmlns.com/foaf/spec/#term_Agent",
+      "required": true,
+      "source": "DTL"
+    },
+    "language": {
+      "uri": "http://purl.org/dc/terms/language",
+      "definition": "The language of the catalog. This refers to the language used in the textual metadata describing titles, descriptions, etc. of the datasets in the catalog.",
+      "comment": "Resources defined by the Library of Congress (1, 2) should be used. \nIf a ISO 639-1 (two-letter) code is defined for language, then its corresponding IRI should be used; if no ISO 639-1 code is defined, then IRI corresponding to the ISO 639-2 (three-letter) code should be used.\n\nMultiple values can be used. The publisher might also choose to describe the language on the dataset level (see dataset language).",
+      "has_range": "http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#LinguisticSystem",
+      "required": false,
+      "source": "DTL"
+    },
+    "license": {
+      "uri": "http://purl.org/dc/terms/license",
+      "definition": "This links to the license document under which the catalog is made available and not the datasets. Even if the license of the catalog applies to all of its datasets and distributions, it should be replicated on each distribution.",
+      "has_range": "http://purl.org/dc/terms/LicenseDocument",
+      "version": "http://dublincore.org/usage/terms/history/#license-002",
+      "required": false,
+      "source": "DTL",
+      "variable_name": "license_uri",
+      "is_uri": true
+    },
+    "rights": {
+      "uri": "http://purl.org/dc/terms/rights",
+      "definition": "This describes the rights under which the catalog can be used/reused and not the datasets. Even if theses rights apply to all the catalog datasets and distributions, it should be replicated on each distribution.",
+      "has_range": "http://purl.org/dc/terms/RightsStatement",
+      "required": false,
+      "source": "DTL",
+      "variable_name": "rights_uri",
+      "is_uri": true
+    },
+    "label": {
+      "uri": "https://www.w3.org/TR/rdf-schema/#ch_label",
+      "definition": "an instance of rdf:Property that may be used to provide a human-readable version of a resource's name.",
+      "comment": "A triple of the form (R, rdfs:label, L) states that L is a human readable label for R.",
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "required": true,
+      "source": "DTL"
+    },
+    "distribution": {
+      "uri": "http://www.w3.org/ns/dcat#Distribution",
+      "definition": "Represents a specific available form of a dataset. Each dataset might be available in different forms, these forms might represent different formats of the dataset or different endpoints. Examples of distributions include a downloadable CSV file, an API or an RSS feed",
+      "comment": "This represents a general availability of a dataset it implies no information about the actual access method of the data, i.e. whether it is a direct download, API, or some through Web page. The use of dcat:downloadURL property indicates directly downloadable distributions.",
+      "required": true,
+      "source": "DTL"
+    },
+    "theme": {
+      "uri": "http://www.w3.org/ns/dcat#theme",
+      "definition": "The main category of the dataset. A dataset can have multiple themes.",
+      "comment": "The set of skos:Concepts used to categorize the datasets are organized in a skos:ConceptScheme describing all the categories and their relations in the catalog.",
+      "required": true,
+      "has_range": "http://www.w3.org/2004/02/skos/core#Concept",
+      "source": "DTL"
+    },
+    "contactPoint": {
+      "uri": "http://www.w3.org/ns/dcat#theme",
+      "definition": "Link a dataset to relevant contact information which is provided using VCard [vcard-rdf].",
+      "required": false,
+      "has_range": "http://www.w3.org/2006/vcard/ns#Kind",
+      "source": "DTL"
+    },
+    "keyword": {
+      "uri": "http://www.w3.org/ns/dcat#keyword",
+      "definition": "A keyword or tag describing the dataset.",
+      "required": false,
+      "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "source": "DTL"
+    },
+    "landingPage": {
+      "uri": "http://www.w3.org/ns/dcat#landingPage",
+      "definition": "A Web page that can be navigated to in a Web browser to gain access to the dataset, its distributions and/or additional information.",
+      "required": false,
+      "has_range": "http://xmlns.com/foaf/0.1/Document",
+      "source": "DTL",
+      "comment": "If the distribution(s) are accessible only through a landing page (i.e. direct download URLs are not known), then the landing page link should be duplicated as accessURL on a distribution. (see example 4.4)"
+    }
+  }
+}
