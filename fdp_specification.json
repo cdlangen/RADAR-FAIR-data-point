@@ -159,7 +159,7 @@
       "is_uri": true
     },
     "label": {
-      "uri": "https://www.w3.org/TR/rdf-schema/#ch_label",
+      "uri": "http://www.w3.org/2000/01/rdf-schema#label",
       "definition": "an instance of rdf:Property that may be used to provide a human-readable version of a resource's name.",
       "comment": "A triple of the form (R, rdfs:label, L) states that L is a human readable label for R.",
       "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -175,11 +175,11 @@
       "source": "DTL",
       "is_uri": true
     },
-    "dataset": {
+    "datasets": {
       "uri": "https://www.w3.org/ns/dcat#Dataset",
       "definition": "A collection of data, published or curated by a single agent, and available for access or download in one or more formats.",
       "comment": "This class represents the actual dataset as published by the dataset publisher. In cases where a distinction between the actual dataset and its entry in the catalog is necessary (because metadata such as modification date and maintainer might differ), the catalog record class can be used for the latter.",
-      "required": true,
+      "required": false,
       "source": "DTL"
     },
     "themeTaxonomy": {
@@ -274,7 +274,7 @@
       "is_uri": true
     },
     "label": {
-      "uri": "https://www.w3.org/TR/rdf-schema/#ch_label",
+      "uri": "http://www.w3.org/2000/01/rdf-schema#label",
       "definition": "an instance of rdf:Property that may be used to provide a human-readable version of a resource's name.",
       "comment": "A triple of the form (R, rdfs:label, L) states that L is a human readable label for R.",
       "has_range": "http://www.w3.org/2000/01/rdf-schema#Literal",

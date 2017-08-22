@@ -1,98 +1,114 @@
 {
-    "api_host": "http://radar-restapi.eu-west-1.elasticbeanstalk.com/api",
+    "api_host":     "https://radar-cns.ddns.net/api/",
     "api_password": "changeme",
-    "api_user": "admin",
+    "api_user":     "admin",
     "catalogs": {
-        "RADAR-CNS": {
-            "issued": "21/07/2017",
-            "language": [
-                "en"
-            ],
-            "modified": "21/07/2017",
-            "publisher": "RADAR-CNS",
-            "title": "Studies of the RADAR-CNS consortium",
-            "title_language": "en",
-            "uri": "/RADAR-CNS",
-            "version": 1,
-            "identifier": "RADAR-CNS",
-            "label": "RADAR-CNS",
-            "datasets": {
-                "Epilepsy": {
-                    "issued": "21/07/2017",
-                    "modified": "21/07/2017",
-                    "publisher": "RADAR-CNS",
-                    "title": "RADAR-CNS Epilepsy",
-                    "title_language": "en",
-                    "uri": "/Dataset-X",
-                    "version": 1,
-                    "identifier": "RADAR-CNS",
-                    "label": "RADAR-CNS",
-                    "distribution": ["csv", "api"],
-                    "theme": ["wearables", "epilepsy"]
-                }
-            },
-            "dataset": {
-                "issued": "21/07/2017",
-                "modified": "21/07/2017",
-                "publisher": "RADAR-CNS",
-                "title": "RADAR-CNS dataset",
-                "title_language": "en",
-                "uri": "/RADAR-CNS",
-                "version": 1,
-                "identifier": "RADAR-CNS",
-                "label": "RADAR-CNS",
-                "distribution": ["csv", "api"],
-                "theme": ["wearables", "epilepsy"]
-            },
-            "themeTaxonomy": "TODO"
+        "{uid}": {
+            "datasets":         {},
+            "identifier":       { "value": "/subject/getSubject/{uid}", "type": "API_Literal", "varname": "subjectId"},
+            "issued":           { "value": "21/07/2017", "type": "Literal"},
+            "label":            { "value": "{uid}", "type": "Literal"},
+            "language":         { "value": [ "en" ], "type": "Literal" },
+            "modified":         { "value": "21/07/2017", "type": "Literal"},
+            "publisher":        { "value": "test", "type": "Literal"},
+            "themeTaxonomy":    { "value": "TODO", "type": "Literal"},
+            "title":            { "value": "Studies of the {uid} consortium", "type": "Literal"},
+            "title_language":   { "value": "en", "type": "Literal"},
+            "uri":              { "value": "/test", "type": "URI" },
+            "version":          { "value": 1, "type": "Literal"}
         },
-
+        "TestAPI": {
+            "datasets":         {},
+            "identifier":       { "value": "/subject/getSubject/MRC03", "type": "API_Literal", "varname": "subjectId"},
+            "issued":           { "value": "21/07/2017", "type": "Literal"},
+            "label":            { "value": "test", "type": "Literal"},
+            "language":         { "value": [ "en" ], "type": "Literal" },
+            "modified":         { "value": "21/07/2017", "type": "Literal"},
+            "publisher":        { "value": "test", "type": "Literal"},
+            "themeTaxonomy":    { "value": "TODO", "type": "Literal"},
+            "title":            { "value": "Studies of the test consortium", "type": "Literal"},
+            "title_language":   { "value": "en", "type": "Literal"},
+            "version":          { "value": 1, "type": "Literal"}
+        },
         "Organization-X": {
-            "issued": "21/07/2017",
-            "language": [
-                "en"
-            ],
-            "modified": "21/07/2017",
-            "publisher": "Project-X",
-            "title": "Studies of the Project-X consortium",
-            "title_language": "en",
-            "uri": "/Organization-X",
-            "version": 1,
-            "identifier": "Organization-X",
-            "label": "Organization-X",
             "datasets": {
                 "Dataset-X": {
-                    "issued": "21/07/2017",
-                    "modified": "21/07/2017",
-                    "publisher": "Organization-X",
-                    "title": "Organization-X's Dataset-X",
-                    "title_language": "en",
-                    "uri": "/Dataset-X",
-                    "version": 1,
-                    "identifier": "Organization-X",
-                    "label": "Organization-X",
-                    "distribution": ["csv", "api"],
-                    "theme": ["wearables", "disease X"]
+                    "distribution": {
+                        "value": [
+                            "csv",
+                            "api"
+                        ],
+                        "type": "Array-Literal"
+                    },
+                    "identifier":   { "value": "Organization-X", "type":  "Literal"},
+                    "issued":       { "value": "21/07/2017", "type":  "Literal"},
+                    "label":        { "value": "Organization-X", "type":  "Literal"},
+                    "modified":     { "value": "21/07/2017", "type":  "Literal"},
+                    "publisher":    { "value": "Organization-X", "type":  "Literal"},
+                    "theme": { "value": [
+                            "wearables",
+                            "disease X"
+                        ], "type":  "Array-Literal"
+                    },
+                    "title":        { "value": "Organization-X's Dataset-X", "type":  "Literal"},
+                        "title_language": { "value": "en", "type": "Literal"},
+                        "uri":      { "value": "/Dataset-X", "type": "URI"},
+                        "version":  { "value": 1, "type": "Literal"}
+                    }
+                },
+            "identifier": { "value": "Organization-X", "type": "Literal"},
+            "issued": { "value": "21/07/2017", "type": "Literal"},
+            "label": { "value": "Organization-X", "type": "Literal"},
+            "language": { "value": [ "en" ], "type": "Literal" },
+            "modified": { "value": "21/07/2017", "type": "Literal"},
+            "publisher": { "value": "Project-X", "type": "Literal"},
+            "themeTaxonomy": { "value": "TODO", "type": "Literal"},
+            "title": { "value": "Studies of the Project-X consortium", "type": "Literal"},
+            "title_language": { "value": "en", "type": "Literal"},
+            "uri": { "value": "/Organization-X", "type": "URI" },
+            "version": { "value": 1, "type": "Literal"}
+        },
+        "RADAR-CNS": {
+            "datasets": {
+                "Epilepsy": {
+                    "distribution": { "value": [ "csv", "api" ], "type": "Array-Literal" },
+                    "identifier":   { "value": "RADAR-CNS_Epilepsy", "type": "Literal"},
+                    "issued":       { "value": "21/07/2017", "type": "Literal"},
+                    "label":        { "value": "RADAR-CNS_Epilepsy", "type": "Literal"},
+                    "modified":     { "value": "21/07/2017", "type": "Literal"},
+                    "publisher":    { "value": "RADAR-CNS", "type": "Literal"},
+                    "theme":        { "value": [ "wearables", "epilepsy" ], "type": "Array-Literal" },
+                    "title":        { "value": "RADAR-CNS Epilepsy", "type": "Literal"},
+                    "title_language": { "value": "en", "type": "Literal"},
+                    "uri":          { "value": "/epilepsy", "type": "URI"},
+                    "version":      { "value": 1, "type": "Literal"}
                 }
             },
-            "themeTaxonomy": "TODO"
+            "identifier": { "value": "RADAR-CNS", "type": "Literal"},
+            "issued": { "value": "21/07/2017", "type": "Literal"},
+            "label": { "value": "RADAR-CNS", "type": "Literal"},
+            "language": { "value": [ "en" ], "type": "Literal"},
+            "modified": { "value": "21/07/2017", "type": "Literal"},
+            "publisher": { "value": "RADAR-CNS", "type": "Literal"},
+            "themeTaxonomy": { "value": "TODO", "type": "Literal"},
+            "title": { "value": "Studies of the RADAR-CNS consortium", "type": "Literal"},
+            "title_language": { "value": "en", "type": "Literal"},
+            "uri": { "value": "/RADAR-CNS", "type": "URI"},
+            "version": { "value": 1, "type": "Literal"}
         }
     },
-    "description": "This is the development instance of RADAR FAIR Datapoint.",
-    "description_language": "en",
-    "fdp_uid": "FDPIDENTIFIER_literal",
-    "fdp_uri": "http://some.uri",
-    "issued": "21/07/2017",
-    "languages": [
-        "en",
-        "nl"
-    ],
-    "license_uri": "https://www.gnu.org/licenses/gpl-3.0.en.html",
-    "metadata_version": 1,
-    "modified": "21/07/2017",
-    "organizationName": "The Hyve",
-    "organization_uri": "http://thehyve.nl",
-    "repository_uid": "repository-id",
-    "title": "Hyve FAIR datapoint",
-    "version": 1
+    "description": { "value": "This is the development instance of RADAR FAIR Datapoint.", "type": "Literal"},
+    "description_language": { "value": "en", "type": "Literal"},
+    "fdp_uid": { "value": "FDPIDENTIFIER_literal", "type": "Literal"},
+    "fdp_uri": { "value": "http://some.uri", "type": "URI"},
+    "issued": { "value": "21/07/2017", "type": "Literal"},
+    "languages": { "value": [ "en", "nl" ], "type": "Literal" },
+    "license_uri": { "value": "https://www.gnu.org/licenses/gpl-3.0.en.html", "type": "URI"},
+    "metadata_version": { "value": 1, "type": "Literal"},
+    "modified": { "value": "21/07/2017", "type": "Literal"},
+    "organizationName": { "value": "The Hyve", "type": "Literal"},
+    "organization_uri": { "value": "http://thehyve.nl", "type": "URI"},
+    "repository_uid": { "value": "repository-id", "type": "Literal"},
+    "title": { "value": "Hyve FAIR datapoint", "type": "Literal"},
+    "version": { "value": 1, "type": "Literal"}
 }

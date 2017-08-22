@@ -10,8 +10,8 @@
 *
 '''
 
-import falcon
-from radar_fair_metadata import RadarFairMetadata
+import falcon, json
+import fair_metadata
 
 
 class TurtleRdf(object):
@@ -28,11 +28,20 @@ class TurtleRdf(object):
         resp.body = g.serialize(format='turtle')
 
 
-radar_fair_metadata = RadarFairMetadata()
+# Read project config from file
+with open("testConfig.json", 'r') as infile:
+    config = json.load(infile)
 
+# Read FDP specifications from file
+with open("fdp_specification.json", 'r') as infile:
+    specs = json.load(infile)
+
+metadata = fair_metadata.FairMetadata(config, specs)
+
+metadata.catalog("MRC03")
 # Add endpoints
 api = falcon.API()
-api.add_route('/', TurtleRdf(radar_fair_metadata.repository))
-api.add_route('/studies', TurtleRdf(radar_fair_metadata.catalog))
-api.add_route('/studies/{param1}', TurtleRdf(radar_fair_metadata.dataset))
-api.add_route('/studies/{param1}/data', TurtleRdf(radar_fair_metadata.distribution))
+api.add_route('/', TurtleRdf(metadata.fdp))
+api.add_route('/organizations', TurtleRdf(metadata.catalogs))
+api.add_route('/organizations/{param1}', TurtleRdf(metadata.catalog))
+# api.add_route('/studies/{param1}/data', TurtleRdf(metadata.distribution))
